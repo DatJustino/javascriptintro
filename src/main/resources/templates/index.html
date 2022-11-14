@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Teknologi 1: Læringsmål: Mini projekt</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#tabs").tabs();
+            $("#tabs-om-1").tabs();
+            $("#tabs-om-2").tabs();
+            $("#tabs-om-3").tabs();
+            $("#tabs-om-4").tabs();
+
+            $("#btnRun").click(function () {
+                $.ajax({
+                    url: "https://api.nationalize.io/?name=" + encodeURIComponent($("#navn").val()),
+                    success: function (result) {
+                        $("#webresult").html("");
+                        $.each(result.country, function (i) {
+                            $.each(result.country[i], function (key, val) {
+                                $("#webresult").append("<div>" + key + ": " + val + "</div>");
+                            });
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+<div id="tabs">
+    <ul>
+        <li><a href="#start">Start</a></li>
+        <li><a href="#om-1">Område 1</a></li>
+        <li><a href="#om-2">Område 2</a></li>
+        <li><a href="#om-3">Område 3</a></li>
+        <li><a href="#om-4">Område 4</a></li>
+        <li><a href="#webs">Webservice</a></li>
+        <li><a href="#webs2">Webservice</a></li>
+    </ul>
+    <div id="start">
+        <p><b>Programmet arbejder med de 4 læringsmålsområder</b></p>
+        <table>
+            <tr>
+                <td>Område 1: Cloud, Operativ systemer, Database.</td>
+            </tr>
+            <tr>
+                <td>Område 2: Talsystemer, Debug.</td>
+            </tr>
+            <tr>
+                <td>Område 3: Samtidighedsproblematikker.</td>
+            </tr>
+            <tr>
+                <td>Område 4: Computernetværk.</td>
+            </tr>
+            <tr>
+                <td>Webservice: Test område af webservice</td>
+            </tr>
+        </table>
+        </br>
+
+        Mini projektet er udarbejdet af Ian Michel Justino og Veronica Bistrup Frydkjær
+        <br/><br/>
+        Jeres fuldenavne og KEA e-mail tilføj evt. gruppenavn:
+        Ian Michel Justino, ianx0889@
+        Veronica Bistrup Frydkjær
+        <br/><br/>
+        Afleveringsdato: 09/11/22
+
+    </div>
+    <div id="om-1">
+        <div id="tabs-om-1">
+            <ul>
+                <li><a href="#sp-1">1</a></li>
+                <li><a href="#sp-2">2</a></li>
+                <li><a href="#sp-3">3</a></li>
+                <li><a href="#sp-4">4</a></li>
+                <li><a href="#sp-5">5</a></li>
+                <li><a href="#sp-6">6</a></li>
+                <li><a href="#sp-7">7</a></li>
+                <li><a href="#sp-8">8</a></li>
+                <li><a href="#sp-9">9</a></li>
+            </ul>
+            <div id="sp-1">
+                <p>Spørgsmål 1 - Beskriv en computers hardware.</p> <br/>
+                <pre>
+MOBO - Motherboardet (bundkortet) er et Printede Circuit Board (PCB) - Et ofte grønt board af insulerende materiale med kobberlinjer mellem de steder
+   hvor de elektroniske komponenter sættes på, hvilket forbinder komponenterne elektrisk.
+   Det har porte, sockets, slots og connectors. Alt både intern og ekstern hardware kan tilkobles motherboardet hvor det interconnectes.
+   Et moderne motherboard indeholder følgende:
+   - lydkort
+   - netværkskort
+   - BIOS chip
+   - motherboard chipset.
+   BIOS chippen indeholder read only memory (ROM).
+   BIOS chippen kalder bootloaderen ved opstart og finder kernel image på harddisken.
+   Motherboard chipsetten gør at CPU’en kan tale med alle komponenterne på motherboardet.
+Det indeholder også en masse indgange såsom:
+- Sockets: CPU’en sidder i en CPU socket.
+- Porte: USB porte, Ethernet port, Serial AT Attachment (til harddisk), port til mus (Forældet), HDMI port og/eller display port samt andre ikke nævnte eksempler.
+- Slots: RAM tilkobles en slot specifik for RAM, en memory slot.
+- PCI-e slots: (Peripheral Component Interconnect express): PCI-e slots til expansion cards, altså kort som ikke er strengt nødvendige såsom
+   - lydkort
+   - grafikkort/GPU
+   - netværkskort osv.
+- Connector: en connector bruges til at have et mellemled ved tilkobling af komponenter. Fx kan man have en connector på en USB port.
+   Det gør at man kan have en tilkobling af et USB-stik væk fra motherboardet (fx på forsiden af kabinettet),
+   hvor en connector leder data til den egentlige USB port på motherboardet. Der er connectors til mange af portene.
+CPU - Central Processing Unit er “hjernen” i computeren. En CPU i dag indeholder flere cores, som indeholder flere processorer, og de udfører operationer.
+   Cores er ofte specialiserede til bestemte opgaver, fx kræver Facial Recognition rigtig meget processorkraft og har en hel core for sig selv.
+    CPU’en sørger for, at processerne sker sekventielt og i den rigtige rækkefølge.
+   CPU’er i dag indeholder ofte en mini-GPU, så en ekstern ikke er strengt nødvendig.
+   CPU’en styrer de tre busser: kontrolbus, adressebus og databus. CPU’ens hastighed (clock-rate) er ofte 1 til 5 GHz i dag, dvs. det er med den
+   frekvens transistorerne tænder og slukker.
+   En CPU har brug for en fast frekvens (clock-rate) så at alle komponenterne er synkroniserede.
+   Tidligere CPU’er havde deres clock-rate bestemt af en kvartskrystal. Tilføres der strøm til krystallen oscillerer den på en helt bestemt frekvens,
+   hvilket bestemte clock-raten. Moderne CPU’er har højere clock rate, end hvad krystaller kan give,
+   og den skabes af et elektronisk kredsløb (phased locked loop) i en separat chip, hvor base clock er 100MHz.
+   Forskellige komponenter i CPU’en kan bruge forskellige clock rate, og en multiplier forstærker base clock til hvad den givne komponent skal bruge,
+        fx kan en core bruge 3 GHz (x30 base clock rate), mens CPU’ens egen GPU (integreret GPU) kan bruge 1,1 GHz.
+CPU’en har en eller flere arithmetic-logic units (ALU) som udfører de basale regneoperationer: +, -, * og /.
+   Den har en cache som er en volatil og meget hurtig hukommelse som kun CPU’en bruger. Den loader fx processer fra styresystemet ind her.
+GPU - Graphical processing unit, grafikkort, overtager bearbejdningen af skærmbilledet fra CPU’en, så CPU’en ikke behøver bruge kraft på det.
+   Grafikkortet fungerer som en sekundær CPU, som kun bearbejder det grafiske.
+   GPU’en har også sin egen RAM - GDDR SDRAM(graphics double data rate synchronous dynamic RAM).
+   Det er en RAM specifikt lavet til GPU’er og er kun til bearbejdning af skærmbilledet.
+   GPU’en har direkte kommunikation med skærmen. GPU’en anvendes ikke konstant, er skærmbilledet simpelt bruges CPU’en mens GPU’en vil være midlertidig inaktiv.
+PSU - Power supply unit (strømforsyning) er en transformer, der laver vekselstrømmen fra stikkontakten til jævnstrøm og styrer styrken af strømmen,
+   så den er tilpasset computeren. Strømmen ledes til motherboarded og fordeles til alle de strømbrugende komponenter. Strømforsyningen har ofte en blæser.
+RAM - Random Access Memory er computerens “korttidshukommelse”. Hvis du har en computer fra før 2010,
+   har du med al sandsynlighed en maskine der køre et 64 bit system, der vil have adgang til 16 exabytes hukommelses adresser.
+   32 bit CPU arkitektur havde et max på 4 gb adgang til RAM. Det er her vigtigt at notere sig,
+   at RAM hukommelse slettes hvis der ikke længere tilføres strøm, dvs det er volatilt. RAM bruges konstant,
+   alt hvad CPU’en får besked på, fx fra programmer lægges i RAM. CPU’en lægger og henter data fra RAM gennem busserne.
+HDD/SSD - Hard disk. Permanent opbevaring af data. Der findes 2 formater af Hard disk drives HDD (Hard Disk Drive) og SSD (Solid State Drive).
+HDD er elektromekanisk. En “arm” med en magnet i læser flere roterende plader (platters) på begge sider, hvor små magnetiske poler på platterne læses som binære tal.
+SSD er defineret som alt, der ikke er elektromekanisk eller optisk. Det er stort set altid flash memory, men kan i princippet være andet.
+   Flash memory gemmer data ved at gemme elektriske ladninger i transistorer. “Tændt” er 1 og “slukket” er 0.
+   Stort set al non-volatil ekstern hukommelse er flash memory, SD kort, memory kort, USB-stik osv.
+Optical drive - Optisk drev, bruges til at læse data fra diskmedier såsom CD, DVD og Blu Ray.
+   Diskene læses ved at en laser lyses på diskene og læser dyk og bakker på mediet som binære tal. Dette er ved at være et uddateret medie.
+Fans - Blæsere, disse bruges til at skabe køling på computerens komponenter, for at forhindre overophedning og i værste tilfælde kortslutning og brand.
+   Har også en heat sink som er metalriller designet til at lede varme væk.
+   Der sidder en blæser over CPU’en, en eller flere på grafikkkortet, blæsere på PSU’en osv. Der findes også vandkøling.
+            </pre>
+            </div>
+            <div id="sp-2">
+                <p>Spørgsmål 2 - Beskriv Azure Cloud og hvad man kan bruge den til </p> <br/>
+                <pre>Azure cloud bruges til at lave virtuelle maskiner og databaser og leje computerkraft, da man bruger deres servere.
+Det fantastiske ved Azure cloud er sådan set at man altid kan komme i kontakt med sin virtuelle maskine via internettet lige meget hvor man befinder sig på kloden,
+og gør en i stand til at bruge en supercomputer uanset hvilken pc man selv er i besiddelse af.
+En stor fordel ved cloudbaserede virtuelle maskiner er også, at man kan tilpasse mængden af lejet computerkraft alt efter trafik,
+hvis man fx har en hjemmeside, hvor trafikken varierer meget. Det er en fordel, hvis det ikke er muligt at håndtere den maksimale trafik på ens egne servere,
+samt at det er billigere og mere miljøvenligt at tilpasse computerkraften til, hvor meget man skal bruge i øjeblikket.
+</pre>
+            </div>
+            <div id="sp-3">
+                <p>Spørgsmål 3 - Hvad er Raspberry Pi og hvad kan den bruges til? </p> <br/>
+                <pre>RasPi er en mini-computer. Den indeholder alt det basiske, som et motherboard indeholder.
+Den kan bruges til mange ting såsom serverer, roboter, som router, spillekonsol (retro-pi),
+til uddannelse, at lege med, til at bruge i hjemmebyggede Internet of Things og mange andre ting.
+</pre>
+            </div>
+            <div id="sp-4">
+                <p> Spørgsmål 4 - Hvilken typer harddiske findes i en computer og hvad er forskellen på dem?</p> <br/>
+                <pre>Kopieret fra tidligere svar:
+HDD/SSD - Hard disk. Permanent opbevaring af data. Der findes 2 formater af Hard disk drives HDD (Hard Disk Drive) og SSD (Solid State Drive).
+HDD er elektromekanisk. En “arm” med en magnet i læser flere roterende plader (platters) på begge sider, hvor små magnetiske poler på platterne læses som binære tal.
+SSD er defineret som alt, der ikke er elektromekanisk eller optisk. Det er stort set altid flash memory, men kan i princippet være andet.
+Flash memory gemmer data ved at gemme elektriske ladninger i transistorer. “Tændt” er 1 og “slukket” er 0.
+Stort set al non-volatil ekstern hukommelse er flash memory, SD kort, memory kort, USB stik osv.
+Fordele:
+SSD: meget hurtigere, nyere teknologi, mindre komponent, lettere vægt, bruger mindre strøm og at data ikke fragmenteres på disken og kan placeres hvor som helst på disken,
+i modsætning af HDD hvor dataen helst skal ligge sammen. For at modvirke dette kan man defragmentere disken.
+HDD: billigere i forhold til plads og kan have længere levetid, dog mister begge data over tid.
+Ulemper:
+SSD: er dyrere i forhold til plads og data på en SSD risikerer at blive korrupteret jo flere program/erase cycles der er sket (at al data overwrites)
+HDD: mister data ved at lubricants tører ud, de magnetiske felter vender, eller skade på de fysiske komponenter
+                </pre>
+            </div>
+            <div id="sp-5">
+                <p>Spørgsmål 5 - Hvilke typer busser findes findes i en computer?</p> <br/>
+                <pre>Controlbus - modtager og sender kontrolsignaler til computerens andre enheder.
+Controlbus har også styr på clock sekvensen.
+Adressebus - Finder ud af hvor den efterspurgte information ligger i RAM - på hvilken adresse.
+Data transfer bus - Sender den data, der skal sendes.
+               </pre>
+            </div>
+            <div id="sp-6">
+                <p>Spørgsmål 6 - Computer netværk: Hvad er forskellen på IP og MAC</p> <br/>
+                <pre>Der er netværkets IP, som er en internetadresse, dét netværk/routeren har over for internettet.
+Så er der IP’en på ens computer, som er den IP, som routeren har tildelt en på det lokale netværk,
+og den kan både være statisk (man har den samme IP hver gang man hopper på wifi) og dynamisk (den ændre sig hver gang man hopper på wifi).
+Det er muligt at finde den omtrente geolokation for et netværks IP.
+MAC - Media Access Control er som en IP, en unik adresse/identifyer, som network interface card (NIC) i computeren har.
+Den er specifik for ens computer. Man kan blokere folks adgang til hjemmesider både med IP- og MAC ban.
+                </pre>
+            </div>
+            <div id="sp-7">
+                <p>Spørgsmål 7 - Hvilken typer kategorier findes der for en PSU og hvad betyder de?</p> <br/>
+
+                <pre>nyttevirkning ved 100% load
+Hvid :82%
+Bronze 85%
+Sølv 87%
+Guld 89%
+Platin 90%
+Titanum 94%
+Jo højere nyttevirkning jo mere udnyttes strømmen, dvs jo mindre energi spildes som varme, når strømmen overføres.
+Nyttevirkningen er den procentdel af den behøvede mængde energi, som rent faktisk bruges af apparatet.
+Nyttevirkningen er dermed den ekstra mængde energi apparatet behøver, for at få den behøvede mængde strøm,
+når man tager hensyn til mængden der spildes på vejen. Fx skal et apparat med 50% nyttevirkning, som skal bruge 1000 Watt have 1500 Watt tilført.
+                </pre>
+            </div>
+            <div id="sp-8">
+                <p>Spørgsmål 8 - Hvad er forskellen på RAM og Harddisk?</p> <br/>
+                <pre>RAM - er korttidshukommelse, volatil, denne forsvinder hvis der slukkes for strømmen.
+HDD/SSD - dette er langtidshukommelsen, ikke-volatil, det er muligt at hente data ud fra denne efter pc’en har været slukket.
+</pre>
+            </div>
+            <div id="sp-9">
+                <p>Spørgsmål 9 - Hvad er et DBMS MySQL og hvad kan det bruges til?</p> <br/>
+                <pre>DBMS står for Database Management system. Det er et type af program som hjælper en med at lave og manage databaser.
+MySQL er et DBMS som er open source og bruges til relationelle databaser og har SQL som sprog.
+SQL databaser er altid relationelle (der er SQL databaser og noSQL databaser, som ikke er relationelle).
+            </pre>
+            </div>
+        </div>
+    </div>
+    <div id="om-2">
+        <div id="tabs-om-2">
+            <ul>
+                <li><a href="#om-2-sp-1">1</a></li>
+                <li><a href="#om-2-sp-2">2</a></li>
+                <li><a href="#om-2-sp-3">3</a></li>
+                <li><a href="#om-2-sp-4">4</a></li>
+                <li><a href="#om-2-sp-5">5</a></li>
+            </ul>
+            <div id="om-2-sp-1">
+                <p> Spørgsmål 1 - Forklar hvad vi kan bruge følgende talsystemer til samt deres navne </p> <br>
+                <pre>•16–talsystemet:
+Hexadecimal betyder 16 talsystem. Hex = 6, deci = 10. bruges til at konvertere mellem decimal og binær i computer. bruges også som farvekoder og til IPv6 adresser.
+Hexadecimal blev er meget kendt da man fandt ud af at IPv4 havde for få adresser ifht den teknologiske udvikling, og derfor begyndt man at bruge IPv6 til nye IP adresser
+derudover bruger man Hexadecimal til MAC adresser.
+grunden til man bruger hexadecimal er at de flest assembly languages bruger Hexadecimaler, som så bliver omskrevet til binære (maskinekode).
+•10–talsystemet:
+Decimal-systemet som vi bruger til udenfor computerverdenen.
+•2–talsystemet:
+Binær-system er et computer sprog også kendt som base2 som processoren og computerens hardware forstår.
+                </pre>
+            </div>
+            <div id="om-2-sp-2">
+                <p>Spørgsmål 2 - Forklar hvordan man regner mellem binær og decimal.</p> <br/>
+                <p>eksempel 1: 10011010 = 154</p>
+                <p>eksempel 2: 113 = 01110001</p>
+                <p>Læses fra Least Significant Bit til Most Significant Bit (LSB to MSB)</p>
+                <img src="/static/binarytobase10.jpg" alt="binary to base10" style="height: 300px; width: 300px;">
+                <img src="/static/decitobinary.jpg" alt="base10 to binary" style="height: 300px; width: 400px;">
+            </div>
+            <div id="om-2-sp-3">
+                <p>Spørgsmål 3 - Forklar hvordan man regner mellem binær og hexa decimal.</p> <br/>
+                <img src="/static/binarytohex.jpg" alt="binary to hex" style="height: 300px; width: 300px;">
+
+                <img src="/static/hextilbinaer.png" alt="hex til binaer" style="height: 300px; width: 300px;">
+
+            </div>
+            <div id="om-2-sp-4">
+                <p>Spørgsmål 4 - Forklar hvad forkortelserne DDL og DML og hvad de bruges til.</p> <br/>
+                <pre>DDL: Data Definition Language - laver tabel i en database, definere dens scheme.
+Siger hvilke datatyper den kan tage og UNIQUE, NOT NULL (hvad hedder det?) og sådan.
+Bruges en enkelt gang til at oprette tabellen og ellers ikke.
+
+DML: Data Manipulation Language. UPDATE, DELETE, SELECT osv. kommandoer som tager, ændre og sletter data.
+Gøres når tabellen er oprettet. Bruges hver gang man gør noget med tabellen.
+                </pre>
+            </div>
+            <div id="om-2-sp-5">
+                <p>Spørgsmål 5 - Beskriv hvordan man opretter et MySQL DBMS på Azure og hvad vi kan bruge sådan et
+                    til.</p> <br/>
+                <pre>Den måde vi har lært på er at leje en server plads til Azure Database for MySQL flexible servers
+man vælger hvor stor og stærk serveren skal være, derefter vælger man mellem en masse forskellige indstillinger hvis disse findes nødvendigt
+de vigtige man husker er ens Username og Password da disse er selvvalgt.
+når man så har indtastet disse oplysninger og gemt/skrevet dem ned
+Vil man så kunne tilføje hvem har adgang til Databasen:
+(ip adresser som Azures firewall ikke skal blokere for, vi sætter den til 0.0.0.0 til 255.255.255.255 som alle kan tilgå den HVIS de har username, password og hostname.)
+derefter når den så er oprettet med disse oplysninger, vil man kunne finde sin hostname som man kan tilkoble til ens workbench software eller Intellij DBMS.
+Hvad man kan bruge den til:
+Man kan bruge den til at lagre mange slags data, oftest login information fra brugere til login sider.
+man disse er kun enkelte eksempler da i realiteten er det kun fantastien der nærmest sætter grænser for hvad man kan oplagre på en database
+disse data kan man manipulere ved hjælp af forskellige kommandoer og gøre dem reelt funktionelt til det behov man nu finder nyttigt.
+                </pre>
+            </div>
+        </div>
+    </div>
+    <div id="om-3">
+        <div id="tabs-om-3">
+            <ul>
+                <li><a href="#om-3-sp-1">1</a></li>
+                <li><a href="#om-3-sp-2">2</a></li>
+                <li><a href="#om-3-sp-3">3</a></li>
+                <li><a href="#om-3-sp-4">4</a></li>
+            </ul>
+            <div id="om-3-sp-1">
+                <p>Spørgsmål 1 - Beskriv hvad der gør et problem til samtidighedsproblem gerne ift vores projekt</p>
+                <br/>
+
+                <pre>
+                    når der ændres data samtidigt.
+                    når der sker ting samtidig og der er begrænsede antal ressourcer
+                </pre>
+            </div>
+            <div id="om-3-sp-2">
+                <p>Spørgsmål 2 - Beskriv en type af samtidighedsproblemer gerne praktisk</p> <br/>
+
+                <pre>Biografbillet eller shoppingkurv-eksemplet.
+Forklar eksempel som dirty read eller phantom read og et praktisk eksempel på det
+Dirty Read:
+dirty read sker når man prøver at læse noget fra en række som er låst af et andet process som er i gang med at opdatere rækken,
+og updaten bliver rykket tilbage til den første tilstand:
+
+Dirty Read 2 - Git problemet:
+person 1 og person 2 arbejder på et projekt
+person 1 går i gang med at kode, går efterfølgende tur med sin hund og drikker en kop kaffe uden at commite
+person 2 går i gang med at kode, her er allerede sket et dirty read da denne version allerede ikke er up-to-date.
+person 2 går straks i gang med at lave solidt arbejd og commiter og pusher til git
+person 1 går tilbage til sin computer og commiter og pusher efterfølgende, her får han selv lov til at rydde op.
+lost update:
+biograf eksempel: hvis man lægger en billet i indkøbskurven, man uden at realisere betaling og billeterne bliver så udsolgt i mellemtiden
+sker der en lostupdate samtidighedsproblem.
+Unrepeatable-read problem:
+en bruger forventer at se en bestemt pris på en bestemt vare som de har lagt i indkøbskurven på en hjemmeside
+prisen er dog sidenhen blevet ændret af salgsinstansen efter brugeren allerede havde varen i sit indkøbskurv,
+men brugere kan kun se den gamle pris i sin indkøbskurv da de har en lokal kopi fordi de ikke har opdateret siden
+derfor forekommer unrepeatable-read problem.
+               </pre>
+
+            </div>
+            <div id="om-3-sp-3">
+                <p>Spørgsmål 3 - Findes der nogle standardløsninger på at løse samtidighedsproblemer?</p> <br/>
+                <pre>Oftest: At lukke øjnenene for det.
+80/20 reglen: vi understøtter 80% mens vi ignorere 20%. Hvis problemet ikke overstiger 20% så ignorer vi det,
+da løsningen kan være for komplekst i forhold til fx ejendomsvurderinger. 80/20 går ud på vi skal ikke overdesigne systemet,
+fx navn overstiger antal karakter det må være, det er bare ærgerligt, vi kan ikke tage hensyn til alle.
+Dog skal kunden self få opfyldt de krav der ønskes.
+
+Kunden kan komme efterfølgende og sige de vil have der skal tage hensyn til noget bestemt som der ikke var i projektet i forvejen
+og så får vi noget ekstra betaling, så det, det kan betale sig at ikke at overdesigne.
+Vi skal ikke tage hensyn til hackerangreb og alle mulige ting da det koster mange penge. Gør det som kunden beder om, så kunden er glad,
+de får hvad de vil have og da kunden ikke vil have alt muligt ekstra. Og hvis de ønsker at have flere ting så siger de til og betaler derfor ekstra.
+
+Tidsstempling/timestamp - fx ting i indkøbskurv frigives efter bestemt antal tid.
+låse det - låse ressourcen eksempelvis - transaktionen låses imens processen bearbejdes.
+i CPUen sker der ofte samtidighedsproblemer hvor i CPUen så kan finde på at låse forskellige ressourcer indtil at computeren er klar til at modtage nye oplysninger
+når dette sker, vil CPUen skabe kø-system for de ting den efterfølgende skal bearbejde.
+                </pre>
+            </div>
+            <div id="om-3-sp-4">
+                <p>Spørgsmål 4 - Beskriv Deadlock.</p> <br/>
+                <pre>Processesoren venter på ressource der aldrig bliver frigivet.
+To processer der venter på hinanden:
+To mennesker skal gå forbi hinanden på en smal sti hvor i der kun er plads til en person ad gangen og begge venter på den anden går først.
+Processer der afhænger af hinanden og låser hinanden, printer venter på papir og kan ikke køre før den får det.
+Blue screen of death. 404 error på side - browseren timer ud (ikke serveren). IDE venter på input fra brugeren
+en uendelig løkke i java: while, switch, rekursive kald, do-while.
+Watch dog timer, fx pacemaker, Jutlandia man tjekede om folk var døde ved at helde vand i munden på indlagte soldater
+ekstern enhed sender en puls der tjekker om enheden nu også fungerer. ping er en watch dog timer
+IDE'er stopper uendelige løkker på et tidspunkt efter lang nok tid. bruger al cpu tid i den tid
+ddos er en deadlock - støj og at requeste så mange gange (defineres ikke som deadlock men kinda er) created, blocked osv på slided skal ikke bruges til eksamen
+semaphores og monitores i java er til at styre processor så de ikke går i deadlock. semaphores sætter flag på ressource som bruges, monitors låser noget. er på slide men ikke med til eksamen
+i spring web og databaser kan man bruge det her.
+java concurrency er threads. fx java thread tildeles 10% af cpu til sideløbende process. to tråde har halvdelen af cpu tilgængelig som en enkelt.
+I task manager kan man manuelt tildele en process mere cpu, altså mellem alle processer der foregår på computeren
+yield kommando i java opgiver cpu tid en process bruger
+når programmet afslutter efter deadlock skal rammen frigives. garbage collector, man kan aktivt aktivere den. kan bruges hvis det at terminate en deadlock skal gøres hurtigere. alt med new bliver fjernet
+                </pre>
+            </div>
+        </div>
+    </div>
+    <div id="om-4">
+        <div id="tabs-om-4">
+            <ul>
+                <li><a href="#om-4-sp-1">1</a></li>
+                <li><a href="#om-4-sp-2">2</a></li>
+                <li><a href="#om-4-sp-3">3</a></li>
+                <li><a href="#om-4-sp-4">4</a></li>
+            </ul>
+            <div id="om-4-sp-1">
+                <p>Spørgsmål 1 - Hvad bruges DNS til ift. computernetværk?</p> <br/>
+                DNS - domain Name System. Bruges til at få til tilsvarende ip til en URL
+                DNS består af et system af distribuerede databaser (name servers).
+                En computer peger ud på en name server samt på den lokale router i tilfælde af at computeren ikke selv
+                kender
+                en name server og derfor bruger routerens defautl name server.
+                Man sender en URL ud og får dens tilsvarende ip tilbage.
+            </div>
+            <div id="om-4-sp-2">
+                <p>Spørgsmål 2 - Kan man se hvilke data (filer) der bruges af en webside? Hvis ja, hvordan?</p> <br/>
+                I en browser kan man trykke inspect og trykke hen på "network" og lave en eller anden
+                action på siden, hvor man så vil se alle de filer/data siden henter ved den action.
+                Man kan også se netværkstraffik med programmet Wireshark, som ser alle pakker sendt på det
+                lokale netværk. Programmet Fiddle fra Telerik kan også bruges til at undersøge netværkstraffik;
+                det er lige så dybdegående som browserene selv, og ikke så dybdegående som wireshark.
+            </div>
+            <div id="om-4-sp-3">
+                <p>Spørgsmål 3 - Hvordan kan man kende forskel på Ipv4 og Ipv6?</p> <br/>
+                IPv4: <br>
+                Fx 123.98.211.4 <br>
+                IPv4 er 10-talssystem <br>
+                Har 4 oktetter <br>
+                består i alt af 32 bit <br>
+                Har maks 255<sub>10</sub> pr. punktum-separeret del (her oktet) <br>
+                Oktetter er separeret af punktummer <br>
+                <br>
+                IPv6: <br>
+                Fx 2001:0db8:85a3:0000:0000:8a2e:0370:7334 <br>
+                Ipv6 er hexadecimal <br>
+                Har 16 oktetter, men er delt op i 8 16 bit dele i stedet for oktetter <br>
+                Består i alt af 128 bit <br>
+                Har maks ffff<sub>16</sub>/65535<sub>10</sub> pr. kolon-separeret del (to oktetter, uofficielt kaldet en hextet) <br>
+                <br>
+                IPv6 skrives med hexadecimal fordi de er så meget længere end IPv4. Hexadecimal skrives kortere
+
+            </div>
+            <div id="om-4-sp-4">
+                <p>Spørgsmål 4 - HVis eller beskriv de kommandoer du kender ift. netværk som kan bruges i et
+                    terminalvindue. Det kan fx være “ping”-kommandoen</p> <br/>
+                Når man pinger sender man et request til serveren og venter på tilbagesvar. Man sender nogle
+                bytes ud og serveren skal sende præcis det samme tilbage.
+                Et ping viser en tiden det tager fra man sender requesten til man får svar tilbage
+                fra serveren.
+                <br><br>
+                Andre kommandoer:<br>
+                traceroute (linux/mac)/tracert (win) <br>
+                ipconfig (ifconfig på Mac) <br>
+                arp -A (bare arp kommando) - hvem er på netværk, router sender request ud og alle på netværket SKAL
+                svare - sådan kan man få MAC adresse på alle på netværket <br>
+                nslookup - Name Server Lookup
+            </div>
+        </div>
+    </div>
+
+    <div id="webs">
+        <table>
+            <tr>
+                <td>Navn</td>
+                <td style="padding-left: 20px;padding-right: 20px;"><input id="navn"
+                                                                           alt="Klik på knappen og se svaret fra webserveren"
+                                                                           title="Klik på knappen og se svaret fra webserveren">
+                </td>
+                <td>
+                    <button id="btnRun">Test webservice</button>
+                </td>
+            </tr>
+        </table>
+        <br/>
+        <br/>
+        <b>Svar fra webservice</b>
+        <div id="webresult"></div>
+    </div>
+        </div>
+
+
+</body>
+
+</html>
